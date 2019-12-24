@@ -58,7 +58,14 @@ jobs:
                 docker login -u ${DOCKER_USER} -p ${DOCKER_PASS};
                 docker push ${DOCKER_REPO}/${CIRCLE_PROJECT_REPONAME};
             fi
-            
-       - run:
+  build:
+  
+    branches:
+      only:
+        - master
+    steps:
+      - checkout
+
+      - run:
            name: Testing AWS environment build script
            command: ./create_ebs_env.sh
