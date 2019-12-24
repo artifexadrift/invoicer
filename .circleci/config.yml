@@ -59,6 +59,6 @@ jobs:
                 docker push ${DOCKER_REPO}/${CIRCLE_PROJECT_REPONAME};
             fi
 
-      - run:
-           name: Testing AWS environment build script
-           command: ./create_ebs_env.sh
+#      - run:
+#           name: Testing AWS environment build script
+#           command: ./create_ebs_env.sh
